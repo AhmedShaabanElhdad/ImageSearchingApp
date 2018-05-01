@@ -30,10 +30,10 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="90dp"
             android:layout_gravity="bottom"
-            android:id="@+id/linear_img_data"
             android:visibility="gone"
+            android:id="@+id/linear_img_data"
             android:orientation="vertical"
             android:background="#8e000000">
 
@@ -48,41 +48,25 @@
                     android:textColor="#fff"
                     android:layout_weight="1"
                     android:textSize="18dp"
-                    android:text="@string/view"/>
+                    android:text="@string/likes"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#fff"
-                    android:id="@+id/txt_num_view"
+                    android:id="@+id/txt_likes"
                     android:layout_weight="1"
                     android:textSize="18dp"
                     android:text="200"/>
             </LinearLayout>
 
-
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#fff"
-                    android:layout_weight="1"
-                    android:textSize="18dp"
-                    android:text="@string/download"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#fff"
-                    android:id="@+id/txt_num_download"
-                    android:textSize="18dp"
-                    android:layout_weight="1"
-                    android:text="120"/>
-            </LinearLayout>
+                android:layout_height="match_parent"
+                android:textColor="#fff"
+                android:id="@+id/txt_desc"
+                android:textSize="17dp"
+                android:text="120"/>
 
 
 

@@ -10,11 +10,13 @@ public class Result {
     private String id;
     private String created_at;
     private String updated_at;
+    private String description;
     private int width;
     private int height;
     private Urls urls;
     private int views;
     private int downloads;
+    private int likes;
 
     public Result(String id, String created_at, String updated_at, int width, int height, Urls urls, int views, int downloads) {
         this.id = id;
@@ -90,4 +92,23 @@ public class Result {
     public void setDownloads(int downloads) {
         this.downloads = downloads;
     }
+
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
 }
+
+

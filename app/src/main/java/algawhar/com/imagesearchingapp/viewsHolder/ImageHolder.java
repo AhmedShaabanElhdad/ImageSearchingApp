@@ -19,8 +19,8 @@ public class ImageHolder extends RecyclerView.ViewHolder {
     private ProgressBar mProgressBar;
     private Context mContext;
     private LinearLayout linear_img_data;
-    private TextView txt_num_view;
-    private TextView txt_num_download;
+    private TextView txt_num_likes;
+    private TextView txt_desc;
     View itemView;
 
     public ImageHolder(View itemView, Context context) {
@@ -29,8 +29,8 @@ public class ImageHolder extends RecyclerView.ViewHolder {
         mProgressBar= (ProgressBar) itemView.findViewById(R.id.progressBar_image);
 
         linear_img_data = (LinearLayout)itemView.findViewById(R.id.linear_img_data);
-        txt_num_view = (TextView)itemView.findViewById(R.id.txt_num_view);
-        txt_num_download = (TextView)itemView.findViewById(R.id.txt_num_download);
+        txt_num_likes = (TextView)itemView.findViewById(R.id.txt_likes);
+        txt_desc = (TextView)itemView.findViewById(R.id.txt_desc);
         mContext=context;
         this.itemView=itemView;
 
@@ -41,17 +41,19 @@ public class ImageHolder extends RecyclerView.ViewHolder {
             PicassoLoader.LoadPhoto(mContext,image.getUrls(),mImageView);
         }
 
-        txt_num_view.setText(String.valueOf(image.getViews()));
-        txt_num_download.setText(String.valueOf(image.getDownloads()));
+        txt_num_likes.setText(String.valueOf(image.getLikes()));
+        txt_desc.setText(image.getDescription());
 
-        itemView.setOnHoverListener(new View.OnHoverListener() {
+        itemView.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public boolean onHover(View v, MotionEvent event) {
-
+            public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction())
                 {
                     case MotionEvent.ACTION_DOWN:
                         linear_img_data.setVisibility(View.VISIBLE);
+                        break;
+                    case MotionEvent.ACTION_CANCEL:
+                        linear_img_data.setVisibility(View.GONE);
                         break;
                     case MotionEvent.ACTION_UP:
                         linear_img_data.setVisibility(View.GONE);

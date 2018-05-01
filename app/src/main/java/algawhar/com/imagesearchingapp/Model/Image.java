@@ -8,14 +8,14 @@ public class Image {
 
     private String urls;
     private String id;
-    private int views;
-    private int downloads;
+    private String description;
+    private int likes;
 
-    public Image(String urls, String id, int views, int downloads) {
+    public Image(String urls, String id, String description, int likes) {
         this.urls = urls;
         this.id = id;
-        this.views = views;
-        this.downloads = downloads;
+        this.description = description;
+        this.likes = likes;
     }
 
     public String getUrls() {
@@ -34,19 +34,19 @@ public class Image {
         this.id = id;
     }
 
-    public int getViews() {
-        return views;
+    public String getDescription() {
+        return description;
     }
 
-    public void setViews(int views) {
-        this.views = views;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public int getDownloads() {
-        return downloads;
+    public int getLikes() {
+        return likes;
     }
 
-    public void setDownloads(int downloads) {
-        this.downloads = downloads;
+    public void setLikes(int likes) {
+        this.likes = likes;
     }
 }

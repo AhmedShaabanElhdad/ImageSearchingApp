@@ -41,9 +41,11 @@ public class SearchingModelInteractorImpl implements SearchingModelInteractor {
                 for (Result result : response.body().getResults()) {
                     String id = result.getId();
                     String small = result.getUrls().getSmall();
-                    int downloads=result.getDownloads();
-                    int views=result.getViews();
-                    images.add(new Image(small,id,views,downloads));
+                    int likes=result.getLikes();
+                    String description=result.getDescription();
+                    if (description==null)
+                        description="Not Description Found";
+                    images.add(new Image(small,id,description,likes));
                 }
 
                 listener.onFinished(images);
