@@ -20,14 +20,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class SearchingModelInteractorImpl implements SearchingModelInteractor {
 
     @Override
-    public void search(final OnFinishedListener listener, String query) {
+    public void search(final OnFinishedListener listener, String query, int pageNum) {
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(Constants.DOMAIN)
                 .build();
 
         KUMInterface kumInterface = retrofit.create(KUMInterface.class);
-        Call<ResultImageModel> connection = kumInterface.Search(query,Constants.accessKey);
+        Call<ResultImageModel> connection = kumInterface.Search(query,String.valueOf(pageNum),Constants.accessKey);
         Log.e("connection",connection.request().url().toString());
         connection.enqueue(new Callback<ResultImageModel>() {
             @Override

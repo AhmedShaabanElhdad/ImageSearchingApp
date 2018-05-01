@@ -14,5 +14,5 @@ public interface SearchingModelInteractor {
         void onError(String msg);
     }
 
-    void search(OnFinishedListener listener, String query);
+    void search(OnFinishedListener listener, String query, int pageNum);
 }

@@ -1,5 +1,6 @@
 package algawhar.com.imagesearchingapp.Adpters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,13 +17,15 @@ import algawhar.com.imagesearchingapp.viewsHolder.ImageHolder;
 
 public class ImagesAdpter extends RecyclerView.Adapter<ImageHolder> {
     private List<Image> images=new ArrayList<>();
-    private Context mContext;
+    private Activity mContext;
 
 
-    public ImagesAdpter(List<Image> images, Context  context){
+    public ImagesAdpter(List<Image> images, Activity context){
         this.images=images;
         mContext=context;
     }
+
+
     @Override
     public ImageHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(mContext).inflate(R.layout.image_view,parent,false);
@@ -40,6 +43,8 @@ public class ImagesAdpter extends RecyclerView.Adapter<ImageHolder> {
     }
 
     public void setImages(List<Image> images) {
-        this.images = images;
+        for(Image image:images) {
+            this.images.add(image);
+        }
     }
 }

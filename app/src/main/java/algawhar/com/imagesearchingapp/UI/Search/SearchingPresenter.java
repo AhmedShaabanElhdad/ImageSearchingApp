@@ -6,5 +6,7 @@ public interface SearchingPresenter {
 
     void onDestroy();
 
-    void search(String query);
+    void search(String query, int pageNum);
+
+    //void download(String url);
 }

@@ -29,8 +29,8 @@ public class SearchingPresenterImpl implements SearchingPresenter, SearchingMode
     }
 
     @Override
-    public void search(String query) {
-        findItemsInteractor.search(this,query);
+    public void search(String query, int pageNum) {
+        findItemsInteractor.search(this,query,pageNum);
     }
 
     @Override

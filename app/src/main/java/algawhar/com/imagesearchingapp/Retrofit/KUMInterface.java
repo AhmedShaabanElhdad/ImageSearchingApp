@@ -17,6 +17,7 @@ public interface KUMInterface {
     @GET(Constants.Search)
     Call<ResultImageModel> Search(
             @Query("query") String query,
+            @Query("page") String pageNum,
             @Query("client_id") String client_id
     );
 
